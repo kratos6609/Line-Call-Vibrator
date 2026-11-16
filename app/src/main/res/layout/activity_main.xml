@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="32dp">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorPrimary"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="24dp" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="本應用會監聽 LINE 來電通知，並在來電時觸發手環震動 6 次（約 15 秒），自動停止。\n\n請先啟用「通知存取權」以允許應用讀取 LINE 來電通知。"
+                android:textSize="15sp"
+                android:lineSpacingMultiplier="1.4"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="24dp" />
+
+            <Button
+                android:id="@+id/btnOpenNotificationAccess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_open_notification_access"
+                app:layout_constraintTop_toBottomOf="@id/tvDescription"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="24dp" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status_access_denied"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/btnOpenNotificationAccess"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="?attr/colorControlNormal"
+                android:alpha="0.3"
+                app:layout_constraintTop_toBottomOf="@id/tvStatus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/tvTestSection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔧 測試區"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorPrimary"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
+
+            <Button
+                android:id="@+id/btnTestStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="測試：啟動 6 次震動"
+                app:layout_constraintTop_toBottomOf="@id/tvTestSection"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="12dp" />
+
+            <Button
+                android:id="@+id/btnTestStop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="測試：停止震動"
+                android:backgroundTint="#F44336"
+                app:layout_constraintTop_toBottomOf="@id/btnTestStart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tvTestLog"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="150dp"
+                android:text="測試日誌將顯示於此"
+                android:textSize="12sp"
+                android:textColor="?attr/colorSecondary"
+                android:gravity="top|start"
+                android:background="@android:color/darker_gray"
+                android:padding="12dp"
+                app:layout_constraintTop_toBottomOf="@id/btnTestStop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/tvNote"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="※ 來電時手環將每 2.5 秒震動一次，共 6 次後自動停止。\n※ 需搭配小米手環/手表的「應用通知」開啟震動權限。"
+                android:textSize="12sp"
+                android:textColor="?attr/colorSecondary"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.4"
+                app:layout_constraintTop_toBottomOf="@id/tvTestLog"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

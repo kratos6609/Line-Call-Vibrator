@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">LineCallVibrator</string>
+    <string name="service_name">LINE 來電震動服務</string>
+    <string name="btn_open_notification_access">開啟通知存取權設定</string>
+    <string name="btn_open_notification_access_desc">點擊前往系統設定，啟用 LineCallVibrator 的通知存取權</string>
+    <string name="status_access_granted">✅ 通知存取權已啟用</string>
+    <string name="status_access_denied">❌ 通知存取權未啟用</string>
+    <string name="notification_channel_name">LINE 來電震動</string>
+    <string name="notification_channel_desc">用於在 LINE 來電時觸發手環震動</string>
+    <string name="fg_service_notification_title">LINE 來電震動中</string>
+    <string name="fg_service_notification_text">正在觸發手環震動…</string>
+    <string name="simulated_notification_title">來電中</string>
+    <string name="simulated_notification_text">LINE 來電 - 震動提醒</string>
+</resources>

@@ -1,0 +1,29 @@
+# Gradle / build
+.gradle/
+build/
+app/build/
+*.apk
+*.aab
+
+# Local config (machine-specific)
+local.properties
+gradle.properties
+*.iml
+.idea/
+
+# Gradle wrapper jar (generated)
+gradle/wrapper/gradle-wrapper.jar
+
+# Full Gradle distribution (downloaded, not source)
+gradle-*/
+gradle-*.zip
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Temporary
+*.tmp
+*.log
