@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 
 class MainActivity : AppCompatActivity() {
 
@@ -109,12 +110,12 @@ class MainActivity : AppCompatActivity() {
     private fun sendTestStart() {
         val intent = Intent("com.example.linecallvibrator.TEST_START")
         intent.setPackage(packageName)
-        sendBroadcast(intent)
+        LocalBroadcastManager.getInstance(this).sendBroadcast(intent)
     }
 
     private fun sendTestStop() {
         val intent = Intent("com.example.linecallvibrator.TEST_STOP")
         intent.setPackage(packageName)
-        sendBroadcast(intent)
+        LocalBroadcastManager.getInstance(this).sendBroadcast(intent)
     }
 }
